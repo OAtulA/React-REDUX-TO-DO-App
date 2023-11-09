@@ -5,3 +5,7 @@
 input{
     background-color: rgb(230, 206, 206);
 }
+.todo_add_btn{
+    background-color: greenyellow;
+    width: 10%;
+}

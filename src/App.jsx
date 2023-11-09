@@ -8,8 +8,8 @@ function App() {
   return (
     <>
     <h1> Working Great </h1>
-    <AddTODO/>
-    <Todo/>    
+    <AddTODO />
+    <Todo />    
     </>
   )
 }

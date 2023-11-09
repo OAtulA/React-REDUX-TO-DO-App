@@ -1,27 +1,31 @@
-import  { useState } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
-// since we are using addToDoHandler
-import {addTodo} from '../features/todo/todoSlice'
-import './addTodo.css'
+import { addTodo } from "../features/todo/todoSlice";
+import "./addTodo.css";
 
-function AddTODO(){
-    const [input, setInput]= useState("");
-    const dispacth = useDispatch();
+function AddTODO() {
+  const [input, setInput] = useState("");
+  const dispatch = useDispatch();
 
-    const addToDoHandler =(e)=>{
-      e.preventDefault();
+  const addToDoHandler = (e) => {
+    e.preventDefault();
 
-      //we are sending the value to the reducer 
-      dispacth(addTodo(input))
+    // send value to reducer
+    dispatch(addTodo(input));
+    // to clear input 
+    setInput("");
+  };
 
-      // to erase the input area
-      setInput('');
-    }
-    return(
-        <form className="red" onSubmit={addToDoHandler}>
-            <input type="text"placeholder="Enter a to do" value={input}/>
-        </form>
-    )
+  return (
+    <form className="red" onSubmit={addToDoHandler}>
+      <input
+        type="text"
+        placeholder="Enter a to do"
+        value={input}
+      />
+      <button type="button" className="todo_add_btn" onClick={addToDoHandler}>Add Todo</button>
+    </form>
+  );
 }
 
-export default AddTODO
+export default AddTODO;
