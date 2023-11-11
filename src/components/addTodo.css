@@ -1,11 +1,22 @@
-.red{
-    background-color: rgb(195, 23, 23);
-}
+.red {
+    background-color: rgb(255, 53, 53, 0.865);
+    height: 2rem;
+    /* padding-top: 0.6rem;
+    padding-left: 1rem; */
+    padding: 1rem;
+  }
 
 input{
     background-color: rgb(230, 206, 206);
+    height: 1.5rem;
+    width: 80%;
+    /* margin-right: 1.2rem; */
 }
-.todo_add_btn{
+.todo_add_btn {
     background-color: greenyellow;
-    width: 10%;
-}
+    width: 15%;
+    margin-left: 2rem;
+    font-size: 1rem;
+    padding-top: 0.3rem;
+    padding-left: -1px;
+  }

@@ -1,5 +1,6 @@
 .TodoContainer{
     display: flex;
+    flex-direction: column-reverse;
     box-sizing: border-box;
     width: 80%;
 }

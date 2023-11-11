@@ -11,18 +11,26 @@ function Todo() {
     } 
     */
     const todos = useSelector(state => state.todos)
-    const dispact = useDispatch() 
+    const dispact = useDispatch()
+    let todoElements = todos.map((todo) => (
+        <li className="todo" key={todo.id}>
+            {todo.text}
+            <button onClick={() => dispact(removeTodo(todo.id))}>X</button>
+            {/* As the removeTodo need a payload value */}
+        </li>));
+    let istodoPresent = () => {
+        if (todoElements.length > 0) return (
+            <ul className="TodoContainer">
+                {todoElements}
+            </ul>
+        ); else return (
+            <p>Start creating your todos</p>
+        );
+    }
+    let todoList = istodoPresent()
     return (<div className="ToDO app">
         <h1>To DO </h1>
-        <ul className="TodoContainer">
-        {todos.map( (todo)=>(
-            <li className="todo" key={todo.id}>
-                {todo.text}
-                <button onClick={()=>dispact(removeTodo(todo.id))}>X</button>
-                {/* As the removeTodo need a payload value */}
-            </li>
-        ))}
-        </ul>
+        {todoList}
     </div>)
 }
 
