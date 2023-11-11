@@ -22,9 +22,10 @@ function AddTODO() {
   return (
     <form className="red" onSubmit={addToDoHandler}>
       <input
+      className="addToDo"
         type="text"
         placeholder="Enter a to do"
-        // value={inputRef}
+    
         value={input}
         onChange={(e)=> setInput(e.target.value)}
       />
