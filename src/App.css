@@ -1,0 +1,15 @@
+.todoapp{
+    margin-top: 10vh;
+    /* width: 50%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.todoapp>*{
+    width: 50%;
+}
+
+h1{
+    text-align: center;
+}
