@@ -1,23 +1,16 @@
 # TO DO App React Redux
 
-## Structure
+## Can someone suggest me a better color theme
 
-I have my logic into `src` folder.  
+I need help here.  
+`src/components/todo.css`  
 
-My `store.js` is in  
-`src\app\store.js`
+I want the bg to change for `.todo` and `.DONE`
 
-Reducers and states are in  
-`src/features/todo/todoSlice.js`
+Also kindly write the message  
 
-## error from browser console
+Also in you PR message/comment write  
+`issue #3 solved.`  
 
-```sh
-ambiguous indirect export: AddTODO
-```
-
-I guess `src/components/addTodo.jsx` is responsible for this.  
-I am importing it in `src/App.jsx`
-
-
-
+You might add a few more lines if you wish.  
+As good practise.  
