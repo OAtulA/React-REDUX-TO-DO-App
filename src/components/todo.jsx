@@ -15,7 +15,7 @@ function Todos(){
     }
     let todoElements = todos.map((todo) => (
         <li className={"todo "+ todo.isdone} key={todo.id}>            
-            <input className='todoCheck' type="checkbox" name="done" onChange={()=>toggledone(todo)}/>
+            <input className='todoCheck' type="checkbox" name="done" onChange={()=>toggledone(todo)} checked={todo.isdone === 'DONE' ? true : false}/>
             {todo.text}
             <button onClick={() => removeTodoHandler(todo.id) } className="removeBtn" >X</button>
             {/* As the removeTodo need a payload value */ }
