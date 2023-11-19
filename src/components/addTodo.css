@@ -1,23 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Roboto:ital@1&display=swap');
+
 .red {
-    background-color: rgb(255, 53, 53, 0.865);
+    border-radius: 5px;
+    background-color: rgb(55 111 111 / 87%);
     height: 2rem;
     /* padding-top: 0.6rem;
     padding-left: 1rem; */
     padding: 1rem;
 }
 
-addToDo {
-    background-color: rgb(230, 206, 206);
+.addToDo {
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
     height: 1.5rem;
     width: 80%;
     /* margin-right: 1.2rem; */
 }
 
 .todo_add_btn {
-    background-color: greenyellow;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    padding: 0.2rem;
+    background-color: rgb(52 157 55);
+    color: aliceblue;
+    font-family: 'Roboto', Helvetica, sans-serif;
     width: 15%;
     margin-left: 2rem;
     font-size: 1rem;
     padding-top: 0.3rem;
     padding-left: -1px;
+}
+
+.todo_add_btn:hover {
+    background: linear-gradient(90deg, rgba(49,232,38,1) 49%, rgba(96,204,110,1) 100%);
+    transform: scale(1.1);
+    transition: all 0.3s;
 }
