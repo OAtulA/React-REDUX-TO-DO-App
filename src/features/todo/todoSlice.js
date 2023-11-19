@@ -2,7 +2,7 @@ import { createSlice, nanoid } from '@reduxjs/toolkit';
 
 const initialState = {
   // todos: [{ id: 1, text: 'Hello man' }]
-  todos: []
+  todos: JSON.parse(localStorage.getItem('todos')) || [],
 }
 
 // These funcitons simply act as reducers
@@ -11,21 +11,29 @@ function add_todo(state, action) {
   const todo = {
     id: nanoid(),
     isdone: "NOT_DONE",
-    text: action.payload //the payload here is a object
-  }
+    text: action.payload // the payload here is an object
+  };
 
   state.todos.push(todo);
-  console.log('Action is ', action)
-  console.log('todo is ', todo)
+  localStorage.setItem('todos', JSON.stringify(state.todos));
 }
 
 let remove_todo = (state, action) => {
-  state.todos = state.todos.filter((todo) => todo.id !== action.payload)
-}
+  state.todos = state.todos.filter((todo) => todo.id !== action.payload);
+  localStorage.setItem('todos', JSON.stringify(state.todos));
+};
 
 let edit_todo = (state, action) => {
   // here the payload will have id
-  state.todos = [...state.todos, { id: action.payload.id, text: action.payload.text }]
+  const updatedTodos = state.todos.map((todo) => {
+    if (todo.id === action.payload.id) {
+      return { ...todo, text: action.payload.text };
+    }
+    return todo;
+  });
+
+  state.todos = updatedTodos;
+  localStorage.setItem('todos', JSON.stringify(state.todos));
 }
 
 let toggle_done = (state, action) => {
@@ -36,7 +44,9 @@ let toggle_done = (state, action) => {
     }
     return todo;
   });
+
   state.todos = updatedTodos;
+  localStorage.setItem('todos', JSON.stringify(state.todos));
 };
 
 
